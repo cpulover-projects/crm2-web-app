@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" 
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head>
 <title>Customer Directory</title>
@@ -17,9 +19,12 @@
 
 <body>
 	<div class="container">
-
 		<h3>Customer Directory</h3>
 		<hr>
+		<div>
+			User: <span sec:authentication="name"></span> <br> Role(s): <span
+				sec:authentication="principal.authorities"></span> <br> <br>
+		</div>
 
 		<!-- Add a button -->
 		<a th:href="@{/customer/showFormForAdd}"
@@ -42,20 +47,27 @@
 					<td th:text="${tempCustomer.lastName}" />
 					<td th:text="${tempCustomer.email}" />
 					<td>
-					<a th:href="@{/customer/showFormForUpdate(id=${tempCustomer.id})}"
-						class="btn btn-info btn-sm">
-						Update
-					</a>
-					<a th:href="@{/customer/delete(id=${tempCustomer.id})}"
-						class="btn btn-danger btn-sm"
-						onclick="if (!(confirm('Are you sure to delete this customer?'))) return false">
-						Delete
-					</a>
+						
+							<a  sec:authorize="hasAnyRole('ROLE_MANAGER', 'ROLE_ADMIN')"
+								th:href="@{/customer/showFormForUpdate(id=${tempCustomer.id})}"
+								class="btn btn-info btn-sm"> Update </a>
+				
+							<a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/customer/delete(id=${tempCustomer.id})}"
+								class="btn btn-danger btn-sm"
+								onclick="if (!(confirm('Are you sure to delete this customer?'))) return false">
+								Delete </a>				
 					</td>
-
 				</tr>
 			</tbody>
 		</table>
+
+		<!-- Add a logout button -->
+		<form action="#" th:action="@{/logout}" method="POST">
+
+			<input type="submit" value="Logout"
+				class="btn btn-outline-primary mt-2" />
+
+		</form>
 
 	</div>
 </body>
