@@ -8,6 +8,7 @@ import com.cpulover.spring.crm2webapp.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
+	//custom methods
 	List<Customer> findByFirstNameLike(String name);
 
 }

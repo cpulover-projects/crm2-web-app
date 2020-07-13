@@ -31,7 +31,7 @@ public class CustomerController {
 		model.addAttribute("customers", customerList);
 
 		// return view page
-		return "list-customers";
+		return "customer/list-customers";
 	}
 
 	@GetMapping("/showFormForAdd")
@@ -41,10 +41,10 @@ public class CustomerController {
 
 		// add the attribute to the model
 		model.addAttribute("customer", customer);
-		return "customer-form";
+		return "customer/customer-form";
 	}
 
-	@PostMapping("/saveCustomer")
+	@PostMapping("/save")
 	public String saveCustomer(@ModelAttribute("customer") Customer customer) {
 		// save customer using service
 		customerService.save(customer);
@@ -58,7 +58,7 @@ public class CustomerController {
 		// set customer as a model attribute to pre-populate the form
 		model.addAttribute("customer", customer);
 		// send over to the form
-		return "customer-form";
+		return "customer/customer-form";
 	}
 	
 	@GetMapping("/delete")
@@ -77,6 +77,6 @@ public class CustomerController {
         // add the customers to the model
         theModel.addAttribute("customers", theCustomers);
 
-        return "list-customers";        
+        return "customer/list-customers";        
     }
 }

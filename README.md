@@ -30,6 +30,11 @@
 [[index.html]()]
     - ```<meta http-equiv="refresh" content="0; URL='<path>'" />```
 
+## Notes/Tips
+- Use Model to send model from the Controller to View page and @ModelAttribute to get the model from View page 
+[[CustomerController]()]
+- Create custom methods in the Repository with 
+[Spring Data JPA Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)
 
 
 
