@@ -1,5 +1,31 @@
 # Customer Relationships Management Web Application - RESTful API (Spring Boot)
 
+## Features
+### General
+- Database integration
+- AOP Logging support
+
+### CRUD UI/URLs
+- ```/customer/list```: shows list of customers
+- ```/customer/showFormForAdd```: shows form for adding new customer
+- ```/customer/showFormForUpdate```: shows form for modify existing customer
+- ```/customer/delete/{id}```: deletes customer by id
+
+### CRUD RESTful APIs
+- GET ```/api/customers```: returns list of customers
+- GET ```/api/customers/{id}```: returns customer by id
+- GET ```/magic-api/customers?page={number}```: returns list of customers at page number
+- GET ```/magic-api/customers?sort=lastName```: returns list of customers, ascending sort by last name
+- GET ```/magic-api/customers?sort=firstName,desc```: returns list of customers, descending sort by first name
+- POST ```/api/customers```: add new customer
+- PUT ```/magic-api/customers/{id}```: modifies customer by id
+- DELTE ```/magic-api/customers/{id}```: deletes customer by id
+
+### Actuator APIs
+
+
+---
+
 ## Development Process
 ### Spring Boot
 Configuration with dependencies 
@@ -8,6 +34,7 @@ Configuration with dependencies
 - Thymeleaf
 - MySQL Driver
 - Spring Data JPA
+- Rest Repositories (Spring Data REST)
 - Spring Security
 - Thymeleaf entries for Spring Security 
 [[URL](https://search.maven.org/classic/#search%7Cga%7C1%7Ca%3A%22thymeleaf-extras-springsecurity5%22)]
@@ -22,7 +49,7 @@ Configuration with dependencies
 [[Reference]()]
 3. Configure database connection (JDBC) in 
 [application.properties]()
-4. Configure data sources by Java (manually for multiple data sources)
+4. Configure data sources by Java (unnecessary if single data source)
 [[DataSourceConfig]()]
 
 ### Spring Data JPA
@@ -35,6 +62,11 @@ Configuration with dependencies
 4. Create Service Implementation classes 
 [[CustomerServiceRepository]()]
    - Inject Repository (prefer by constructor)
+
+### Spring Data REST
+Configure in 
+[application.properties]() 
+[[Reference]()]
    
 ### Spring MVC - Thymeleaf
 1. Create Controllers 
@@ -65,8 +97,7 @@ Configuration with dependencies
    - XML namespace ```<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">``` supports Thymeleaf Security.
    - Attribute ```sec:authorize="hasAnyRole('ROLE_<ROLE1>', 'ROLE_<ROLE2>')"``` to display tags based on the role.
 
-### Spring Data REST
-
+---
 
 ## Notes/Tips
 - Use Model to send model from the Controller to View page and @ModelAttribute to get the model from View page 
