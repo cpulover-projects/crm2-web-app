@@ -1,6 +1,7 @@
 # Customer Relationships Management Web Application
 
 ## Configuration
+### Spring Boot
 1. Spring Boot configuration with dependencies 
 [[Reference]()]
    - Spring Web
@@ -13,22 +14,37 @@
 [[create-datebase.sql]()]
 3. Configure database connection (JDBC) in 
 [application.properties]()
-4. Create Entity classes 
+
+### Spring Data JPA
+1. Create Entity classes 
 [[Customer]()]
-5. Create Repository interfaces extends JpaRepository 
+2. Create Repository interfaces extends JpaRepository 
 [[CustomerRepository]()]
-6. Create Service interfaces 
+3. Create Service interfaces 
 [[CustomerService]()]
-7. Create Service Implementation classes 
+4. Create Service Implementation classes 
 [[CustomerServiceRepository]()]
    - Inject Repository (prefer by constructor)
-8. Create Controllers 
+   
+### Spring MVC - Thymeleaf
+1. Create Controllers 
 [[CustomerController]()]
-9. Create HTML view pages 
+2. Create HTML view pages 
 [[list-customers]()]
-10. Create index file in ```/static``` to redirect to home page at startup 
+3. Create index file in ```/static``` to redirect to home page at startup 
 [[index.html]()]
     - ```<meta http-equiv="refresh" content="0; URL='<path>'" />```
+
+### Spring AOP
+1. Create an Aspect defining public common pointcuts 
+[[CommonPointcuts]()]
+2. Create specialized Aspects and define advices
+[[LoggingAspect]()]
+
+### Spring Security
+
+### Spring Data REST
+
 
 ## Notes/Tips
 - Use Model to send model from the Controller to View page and @ModelAttribute to get the model from View page 
