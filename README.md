@@ -35,7 +35,8 @@
 [[CustomerController]()]
 - Create custom methods in the Repository with 
 [Spring Data JPA Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)
-
+- Add hidden ID field for UPDATE 
+[[customer-form]()]
 
 
 
