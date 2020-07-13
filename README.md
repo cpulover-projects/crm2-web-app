@@ -1,6 +1,6 @@
-# Customer Relationships Management Web Application
+# Customer Relationships Management Web Application - RESTful API (Spring Boot)
 
-## Configuration
+## Development Process
 ### Spring Boot
 Configuration with dependencies 
 [[Reference]()]
@@ -56,7 +56,11 @@ Configuration with dependencies
 1. Configure Security by Java 
 [[SecurityConfig]()] 
 [[Reference]()]
-2. Update HTML view pages
+2. Login page 
+[[fancy-login.html]()]
+3. Custom Access Denied page 
+[[access-denied.html]()]
+4. Update HTML view pages
 [[list-customers]()]
    - XML namespace ```<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">``` supports Thymeleaf Security.
    - Attribute ```sec:authorize="hasAnyRole('ROLE_<ROLE1>', 'ROLE_<ROLE2>')"``` to display tags based on the role.
