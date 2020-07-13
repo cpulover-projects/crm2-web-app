@@ -35,4 +35,16 @@ public class LoggingAspect {
 		}
 	}
 	
+	@AfterReturning(pointcut = "com.cpulover.spring.crm2webapp.aop.CommonPointcut.forAll()", returning = "theResult")
+	public void afterReturning(JoinPoint theJoinPoint, Object theResult) {
+
+		// display method we are returning from
+		String theMethod = theJoinPoint.getSignature().toShortString();
+		log.info(">>> Logging after executing method");
+		log.info("    Method: " + theMethod);
+
+		// display data returned
+		log.info("    Return: " + theResult);
+
+	}
 }
