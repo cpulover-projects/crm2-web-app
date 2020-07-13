@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.cpulover.spring.crm2webapp.entity.Customer;
 import com.cpulover.spring.crm2webapp.service.CustomerService;
 
+import lombok.extern.java.Log;
+
 @Controller
 @RequestMapping("/customer")
 public class CustomerController {
@@ -60,23 +62,22 @@ public class CustomerController {
 		// send over to the form
 		return "customer/customer-form";
 	}
-	
+
 	@GetMapping("/delete")
 	public String deleteCustomer(@RequestParam("id") int id) {
 		customerService.deleteById(id);
 		return "redirect:/customer/list";
 	}
-	
+
 	@GetMapping("/search")
-    public String searchCustomers(@RequestParam("name") String name,
-                                    Model theModel) {
+	public String searchCustomers(@RequestParam("name") String name, Model theModel) {
 
-        // search customers from the service
-        List<Customer> theCustomers = customerService.searchCustomers(name);
-                
-        // add the customers to the model
-        theModel.addAttribute("customers", theCustomers);
+		// search customers from the service
+		List<Customer> theCustomers = customerService.searchCustomers(name);
 
-        return "customer/list-customers";        
-    }
+		// add the customers to the model
+		theModel.addAttribute("customers", theCustomers);
+
+		return "customer/list-customers";
+	}
 }

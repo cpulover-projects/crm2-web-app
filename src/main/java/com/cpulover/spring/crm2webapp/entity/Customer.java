@@ -1,4 +1,4 @@
-package com.cpulover.spring.crm2webapp.entity;
+	package com.cpulover.spring.crm2webapp.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
