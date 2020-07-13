@@ -22,8 +22,19 @@
 7. Create Service Implementation classes 
 [[CustomerServiceRepository]()]
    - Inject Repository (prefer by constructor)
-8. Create Controller 
+8. Create Controllers 
 [[CustomerController]()]
+9. Create HTML view pages 
+[[list-customers]()]
+10. Create index file in ```/static``` to redirect to home page at startup 
+[[index.html]()]
+    - ```<meta http-equiv="refresh" content="0; URL='<path>'" />```
+
+
+
+
+
+
 
 
 

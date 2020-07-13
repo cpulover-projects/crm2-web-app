@@ -53,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public List<Customer> searchCustomers(String name) {
 		
-		return customerRepository.findByFirstnameLike(name);
+		return customerRepository.findByFirstNameLike(name);
 	}
 	
 }

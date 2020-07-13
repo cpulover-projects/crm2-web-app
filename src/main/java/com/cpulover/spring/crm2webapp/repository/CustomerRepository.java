@@ -8,6 +8,6 @@ import com.cpulover.spring.crm2webapp.entity.Customer;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
-	List<Customer> findByFirstnameLike(String name);
+	List<Customer> findByFirstNameLike(String name);
 
 }

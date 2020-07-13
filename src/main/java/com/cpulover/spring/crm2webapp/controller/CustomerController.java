@@ -31,7 +31,7 @@ public class CustomerController {
 		model.addAttribute("customers", customerList);
 
 		// return view page
-		return "list-customer";
+		return "list-customers";
 	}
 
 	@GetMapping("/showFormForAdd")
@@ -68,15 +68,15 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/search")
-    public String searchCustomers(@RequestParam("theSearchName") String theSearchName,
+    public String searchCustomers(@RequestParam("name") String name,
                                     Model theModel) {
 
         // search customers from the service
-        List<Customer> theCustomers = customerService.searchCustomers(theSearchName);
+        List<Customer> theCustomers = customerService.searchCustomers(name);
                 
         // add the customers to the model
         theModel.addAttribute("customers", theCustomers);
 
-        return "list-customer";        
+        return "list-customers";        
     }
 }
