@@ -21,7 +21,7 @@
 - POST ```/api/customers```: adds new customer
 - PUT ```/api/customers/{id}```: modifies customer by id
 - DELTE ```/api/customers/{id}```: deletes customer by id
-- Actuator APIs 
+- GET Actuator APIs 
 [[List of built-in endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)]
 ---
 
@@ -57,6 +57,8 @@ Configuration with dependencies
 ### Spring Data JPA
 1. Create Repository interfaces extends JpaRepository 
 [[CustomerRepository]()]
+   - Define custom methods in the Repository with 
+[Spring Data JPA Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)
 2. Create Service interfaces 
 [[CustomerService]()]
 3. Create Service Implementation classes 
@@ -77,7 +79,7 @@ Configure in
 1. Create Controllers 
 [[CustomerController]()]
 2. Create HTML view pages 
-[[list-customers]()]
+[[list-customers.html]()]
    - XML namespace ```<html lang="en" xmlns:th="http://www.thymeleaf.org">``` supports Thymeleaf.
 3. Create index file in ```/static``` to redirect to home page at startup (unnecessary if adding Security)
 [[index.html]()]
@@ -98,7 +100,7 @@ Configure in
 3. Custom Access Denied page 
 [[access-denied.html]()]
 4. Update HTML view pages
-[[list-customers]()]
+[[list-customers.html]()]
    - XML namespace ```<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">``` supports Thymeleaf Security.
    - Attribute ```sec:authorize="hasAnyRole('ROLE_<ROLE1>', 'ROLE_<ROLE2>')"``` to display tags based on the role.
 
@@ -107,10 +109,8 @@ Configure in
 ## Notes/Tips
 - Use Model to send model from the Controller to View page and @ModelAttribute to get the model from View page 
 [[CustomerController]()]
-- Create custom methods in the Repository with 
-[Spring Data JPA Query Methods](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference)
 - Add hidden ID field for UPDATE 
-[[customer-form]()]
+[[customer-form.html]()]
 - Spring MVC only support @GetMapping and @PostMapping
 
 
