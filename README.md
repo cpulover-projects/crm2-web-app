@@ -4,8 +4,7 @@
 ### General
 - Database integration
 - AOP Logging support
-- Actuator APIs 
-[List](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)
+
 
 ### CRUD UI/URLs
 - ```/customer/list```: shows list of customers
@@ -22,7 +21,8 @@
 - POST ```/api/customers```: adds new customer
 - PUT ```/api/customers/{id}```: modifies customer by id
 - DELTE ```/api/customers/{id}```: deletes customer by id
-
+- Actuator APIs 
+[[List of built-in endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)]
 ---
 
 ## Development Process
