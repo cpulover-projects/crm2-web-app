@@ -1,9 +1,18 @@
 # Customer Relationships Management Web Application - RESTful API (Spring Boot)
 
+<img align="left" width="350" height="300" src="/pictures/log-in.png">
+<img align="right" width="350" height="300" src="/pictures/customer-form.png">
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<p align="center"><img width="700" height="400" src="./pictures/home-page.png"></p>
+
 ## Features
 ### General
 - Database integration
 - AOP Logging support
+- Login/logout
 
 
 ### CRUD UI/URLs
@@ -23,6 +32,12 @@
 - DELTE ```/api/customers/{id}```: deletes customer by id
 - GET Actuator APIs 
 [[List of built-in endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)]
+
+### Security
+- EMPLOYEE: view customers
+- MANAGER: view customers, update customers, add customers
+- ADMIN: view customers, update customers, add customers, delete customers
+
 ---
 
 ## Development Process
