@@ -14,15 +14,15 @@
 ### CRUD RESTful APIs
 - GET ```/api/customers```: returns list of customers
 - GET ```/api/customers/{id}```: returns customer by id
-- GET ```/magic-api/customers?page={number}```: returns list of customers at page number
-- GET ```/magic-api/customers?sort=lastName```: returns list of customers, ascending sort by last name
-- GET ```/magic-api/customers?sort=firstName,desc```: returns list of customers, descending sort by first name
+- GET ```/api/customers?page={number}```: returns list of customers at page number
+- GET ```/api/customers?sort=lastName```: returns list of customers, ascending sort by last name
+- GET ```/api/customers?sort=firstName,desc```: returns list of customers, descending sort by first name
 - POST ```/api/customers```: add new customer
-- PUT ```/magic-api/customers/{id}```: modifies customer by id
-- DELTE ```/magic-api/customers/{id}```: deletes customer by id
+- PUT ```/api/customers/{id}```: modifies customer by id
+- DELTE ```/api/customers/{id}```: deletes customer by id
 
 ### Actuator APIs
-
+[List of built-in endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)
 
 ---
 
@@ -33,6 +33,7 @@ Configuration with dependencies
 - Spring Web
 - Thymeleaf
 - MySQL Driver
+- Spring Boot Actuator
 - Spring Data JPA
 - Rest Repositories (Spring Data REST)
 - Spring Security
@@ -64,6 +65,11 @@ Configuration with dependencies
    - Inject Repository (prefer by constructor)
 
 ### Spring Data REST
+Configure in 
+[application.properties]() 
+[[Reference]()]
+
+### Spring Boot Actuator
 Configure in 
 [application.properties]() 
 [[Reference]()]
