@@ -4,6 +4,8 @@
 ### General
 - Database integration
 - AOP Logging support
+- Actuator APIs 
+[List](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)
 
 ### CRUD UI/URLs
 - ```/customer/list```: shows list of customers
@@ -17,12 +19,9 @@
 - GET ```/api/customers?page={number}```: returns list of customers at page number
 - GET ```/api/customers?sort=lastName```: returns list of customers, ascending sort by last name
 - GET ```/api/customers?sort=firstName,desc```: returns list of customers, descending sort by first name
-- POST ```/api/customers```: add new customer
+- POST ```/api/customers```: adds new customer
 - PUT ```/api/customers/{id}```: modifies customer by id
 - DELTE ```/api/customers/{id}```: deletes customer by id
-
-### Actuator APIs
-[List of built-in endpoints](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html)
 
 ---
 
@@ -42,7 +41,7 @@ Configuration with dependencies
 - Spring Boot DevTools (Optional)
 - Lombok (Optional)
 
-### Database
+### Hibernate - Database
 1. Create MySQL database for Entity
 [[create-datebase-customer.sql]()]
 2. Create MySQL database for Security
@@ -52,15 +51,15 @@ Configuration with dependencies
 [application.properties]()
 4. Configure data sources by Java (unnecessary if single data source)
 [[DataSourceConfig]()]
+5. Create Entity classes 
+[[Customer]()]
 
 ### Spring Data JPA
-1. Create Entity classes 
-[[Customer]()]
-2. Create Repository interfaces extends JpaRepository 
+1. Create Repository interfaces extends JpaRepository 
 [[CustomerRepository]()]
-3. Create Service interfaces 
+2. Create Service interfaces 
 [[CustomerService]()]
-4. Create Service Implementation classes 
+3. Create Service Implementation classes 
 [[CustomerServiceRepository]()]
    - Inject Repository (prefer by constructor)
 
